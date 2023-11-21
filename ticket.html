@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Display Text File Contents</title>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                text-align: center;
+                margin: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 style="font-family: 'Roboto Mono', monospace;">TICKET CONFIRMED</h1>
+        <pre id="file-contents" style="font-size: 20px;"></pre>
+
+        <script>
+            fetch("ticket.txt")
+                .then(response => response.text())
+                .then(text => {
+                    const fileContents = document.getElementById("file-contents");
+                    fileContents.textContent = text;
+
+                    // Get the img element
+                    const img = document.querySelector('img');
+
+                    // Append the text to the src attribute of the img element
+                    img.src += encodeURIComponent(text);
+                })
+                .catch(error => console.error(error));
+        </script>
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" alt="QR Code">
+    </body>
+</html>

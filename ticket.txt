@@ -1,0 +1,8 @@
+Name: Gautam
+Phone number: 8904232230
+Payment option: Debit card
+Selected City: Bangalore
+Selected Theatre: "Vinayaka Theatre
+Selected Movie: Vikram
+Selected Date: 20/11/2023
+Selected Seats: J3 J4 
